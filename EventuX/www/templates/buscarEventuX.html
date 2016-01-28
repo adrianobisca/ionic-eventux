@@ -1,39 +1,28 @@
-<ion-view title="Buscar EventuX">
-    <ion-content overflow-scroll="true" padding="false" scroll="false" class="has-header">
-        <div class="button-bar">
-            <button class="button button-stable button-block  icon ion-android-home"></button>
-            <button class="button button-stable button-block  icon ion-search"></button>
-            <a href="#/page7" class="button button-stable button-block  icon ion-android-settings"></a>
-        </div>
+<ion-view title="Encontre um Hipster">
+    <ion-content overflow-scroll="true" padding="false" class="has-header">
         <form class="list">
-            <div class="spacer" style="width: 320px; height: 61px;"></div>
-            <label class="item item-select">
-                <span class="input-label">Tipo de evento</span>
-                <select>
-                    <option>Feira</option>
-                    <option>Palestra</option>
-                    <option>Congresso</option>
-                    <option>Cinema</option>
-                    <option>Teatro</option>
-                    <option></option>
-                </select>
-            </label>
-            <label class="item item-select">
-                <span class="input-label">Assunto</span>
-                <select>
-                    <option>Drama</option>
-                    <option>Tecnologia</option>
-                </select>
-            </label>
-        </form>
-        <form class="list">
-            <label class="item item-input">
+                <label class="item item-input">
                 <span class="input-label">Cidade:</span>
-                <input type="text" placeholder="São Paulo (462 anos)">
+                <input type="text" placeholder="exemplo: São Paulo" ng-model="userloc">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Estabelecimento:</span>
+                <input type="text" placeholder="exemplo: Hot Dog, Starbucks, Cinema" ng-model="param">
             </label>
         </form>
+
         <form class="list">
-            <a href="#/page5" class="button button-balanced button-block ">Buscar</a>
+            <a class="button button-royal button-block col col-50 col-offset-25 button-outline" ng-click="buscafour(userloc, param)">Buscar</a>
         </form>
+        
+        <ion-list>
+            <ion-item class="item-thumbnail-left" ng-repeat="r in result"> <!--href="#/page6"-->
+                <img src="img/location.png">
+                <h1>{{r.name}}</h1>
+                <h2>Telefone: {{r.contact.phone}}</h2>
+                <h2>Endereço: {{r.location.address}}, {{r.location.city}}, {{r.location.state}}</h2>
+            </ion-item>
+        </ion-list>
+        
     </ion-content>
 </ion-view>
