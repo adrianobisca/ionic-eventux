@@ -72,8 +72,8 @@ angular.module('app.routes', [])
         
     .state('configuraçõEs', {
       url: '/page7',
-      templateUrl: 'templates/configuraçõEs.html',
-      controller: 'configuraçõEsCtrl'
+      templateUrl: 'templates/configuracoes.html',
+      controller: 'configuracoesCtrl'
     })
         
       

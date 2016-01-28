@@ -45,7 +45,7 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('configuraçõEsCtrl', function($scope) {
+.controller('configuracoesCtrl', function($scope) {
 
 })
  
